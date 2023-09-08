@@ -26,7 +26,6 @@ def extract_movie_data(url):
 url = 'https://www.fotogramas.es/noticias-cine/g40497441/mejores-peliculas-2023/'
 df = extract_movie_data(url)
 
-# Create a SQLite database and store the DataFrame in it
 peliculasestrenos2023 = sqlite3.connect('Peliculas2023.db')
 df.to_sql('MOVIES2023', peliculasestrenos2023, if_exists='replace', index=False)
 peliculasestrenos2023.commit()
